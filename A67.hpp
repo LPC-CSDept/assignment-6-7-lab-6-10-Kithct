@@ -13,11 +13,52 @@ void swap(int &val1,int &val2)
 }
 void swap(int &val1,int &val2,int &val3)
 {
-    int temp;
-    temp=val1;
-    val1=val3;
-    val3=val2;
-    val2=temp;
+    int max,min,med;
+    if(val1>val2&&val1>val3)
+    {
+        max=val1;
+        if(val2>val3)
+        {
+            med=val2;
+            min=val3;
+        }
+        else
+        {
+            med=val3;
+            min=val2;
+        }
+    }
+    else if(val2>val1&&val2>val3)
+    {
+        max=val2;
+        if(val1>val3)
+        {
+            med=val1;
+            min=val3;
+        }
+        else
+        {
+            med=val3;
+            min=val1;
+        }
+    }
+    else
+    {
+        max=val3;
+        if(val1>val2)
+        {
+            med=val1;
+            min=val2;
+        }
+        else
+        {
+            med=val2;
+            min=val1;
+        }
+    }
+    val1=min;
+    val2=med;
+    val3=max;
 }
 void swap(int &val1,int &val2,int &val3,int &val4)
 {
